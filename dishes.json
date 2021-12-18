@@ -2,41 +2,82 @@
     "entry": "sink",
     "queries": {
         "sink": {
-            "question": "Which sink do you want to use?",
+            "question": "Mom: Rezcwaaaaaaa come do the dishessss!\nRezcwa: I gotchu ez dubskis\n\nCurrent POV: Rezcwa:\nWhere do you want to wash the dishes?",
             "options": {
-                "Kitchen Sink": {
-                    "shorthand": "ks",
-                    "link": "kitchensink"
+                "Kitchen": {
+                    "trigger": "Good choice! The toilet isn't usually the place to do the dishes :D",
+                    "shorthand": "k",
+                    "link": "kitchen"
                 },
-                "Toilet Sink": {
-                    "shorthand": "ts",
+                "Toilet": {
+                    "trigger": "DEVIOUS choice! Mom won't be happy about this >:) She'll know better than to call me down next time!!!!",
+                    "shorthand": "t",
                     "link": "toilet"
                 }
             }
         },
         "toilet": {
-            "question": "Do you want to flush the toilet?",
+            "question": "Do you want to use the toilet bowl or the sink?",
             "options": {
-                "Yes": {
-                    "shorthand": "y",
-                    "link": "ENDING: apcsa ez"
+                "Toilet Bowl": {
+                    "trigger": "This is the easiest path. The swirling water is sure to clean any dishes!",
+                    "shorthand": "tb",
+                    "link": "kitchen"
                 },
-                "No": {
-                    "shorthand": "n",
-                    "link": "ENDING: dqddy"
+                "Sink": {
+                    "trigger": "Boringgggg, I should just go to the kitchen since i'm not willing to do anything crazy :(",
+                    "shorthand": "s",
+                    "link": "kitchen"
                 }
             }
         },
-        "kitchensink": {
-            "question": "Do you want to use the dishwasher?",
+        "kitchen": {
+            "question": "Do you want to use the dishwasher or the normal sink?",
             "options": {
-                "Yes": {
-                    "shorthand": "y",
-                    "link": "ENDING: LOLZ"
+                "Sink": {
+                    "trigger": "Doing the dishes manually is fun, I just listen to music and jam out while being productive!",
+                    "shorthand": "s",
+                    "link": "pickmusic"
                 },
-                "No": {
-                    "shorthand": "n",
-                    "link": "ENDING: kekw"
+                "Dishwasher": {
+                    "trigger": "I'm going to work smarter, not harder! Lets just load everything up and get back to other stuff...",
+                    "shorthand": "d",
+                    "link": "END"
+                }
+            }
+        },
+        "pickmusic": {
+            "question": "Now to play some music... what song should I play?",
+            "options": {
+                "Pompeii by Bastille": {
+                    "trigger": "Classic! This song makes time flyyyyy",
+                    "shorthand": "p",
+                    "link": "picktools"
+                },
+                "Keyboard Milk by Royksopp": {
+                    "trigger": "Reminds me of a man called MARMELIUS THE GREAT!!!! This song is a jam...",
+                    "shorthand": "km",
+                    "link": "picktools"
+                },
+                "High Hopes by Panic! At The Disco": {
+                    "trigger": "A true VIBE! This song really helps me work faster",
+                    "shorthand": "hh",
+                    "link": "picktools"
+                }
+            }
+        },
+        "picktools": {
+            "question": "Now that my mind is in place, it's time to get to work! What should I use to wash the dishes?",
+            "options": {
+                "Water, soap, and a sponge": {
+                    "trigger": "The usual tools always work well! Why would I ever use something else?",
+                    "shorthand": "wss",
+                    "link": ""
+                },
+                "Water and my hands": {
+                    "trigger": "I gotta get going fast, no time for soap or a sponge!\nThat worked well",
+                    "shorthand": "wh",
+                    "link": "picktools"
                 }
             }
         }

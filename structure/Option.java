@@ -3,6 +3,7 @@ package structure;
 import java.util.Map;
 
 public class Option {
+    private String trigger;
     private String shorthand;
     private String link;
 
@@ -10,20 +11,16 @@ public class Option {
         return shorthand;
     }
 
+    public String getTrigger() {
+        return trigger;
+    }
+
     public Query getLink(Game game) {
-        if (link.startsWith("ENDING: ")) {
+        if (link.equals("END")) {
             // End game
             return null;
         }
         Map<String, Query> queries = game.getQueries();
         return queries.get(link);
-    }
-
-    public String getEnding() {
-        if (link.startsWith("ENDING: ")) {
-            // End game
-            return link.substring(8);
-        }
-        return null;
     }
 }
