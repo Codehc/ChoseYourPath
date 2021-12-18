@@ -1,0 +1,44 @@
+{
+    "entry": "sink",
+    "queries": {
+        "sink": {
+            "question": "Which sink do you want to use?",
+            "options": {
+                "Kitchen Sink": {
+                    "shorthand": "ks",
+                    "link": "kitchensink"
+                },
+                "Toilet Sink": {
+                    "shorthand": "ts",
+                    "link": "toilet"
+                }
+            }
+        },
+        "toilet": {
+            "question": "Do you want to flush the toilet?",
+            "options": {
+                "Yes": {
+                    "shorthand": "y",
+                    "link": "ENDING: apcsa ez"
+                },
+                "No": {
+                    "shorthand": "n",
+                    "link": "ENDING: dqddy"
+                }
+            }
+        },
+        "kitchensink": {
+            "question": "Do you want to use the dishwasher?",
+            "options": {
+                "Yes": {
+                    "shorthand": "y",
+                    "link": "ENDING: LOLZ"
+                },
+                "No": {
+                    "shorthand": "n",
+                    "link": "ENDING: kekw"
+                }
+            }
+        }
+    }
+}
