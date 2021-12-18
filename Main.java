@@ -22,8 +22,7 @@ class Main {
     }
 
     private void initGame() {
-        //String game = scn.nextLine();
-        String game = "dishes";
+        String game = scn.nextLine();
         File story = new File(game + ".json");
         if (story.exists()) {
             runner(story);
