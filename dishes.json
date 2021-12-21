@@ -2,7 +2,7 @@
     "entry": "sink",
     "queries": {
         "sink": {
-            "question": "Mom: Rezcwaaaaaaa come do the dishessss!\nRezcwa: I gotchu ez dubskis\n\nCurrent POV: Rezcwa:\nWhere do you want to wash the dishes?",
+            "question": "Mom: Com do the dishes!!!!!!!! If you wash them i'll finish up by drying and putting them away.\nYou: Okkk, i'm coming!11!11!!!!1!1!\n\nCurrent POV: You:\nWhere do you want to wash the dishes?",
             "options": {
                 "Kitchen": {
                     "trigger": "Good choice! The toilet isn't usually the place to do the dishes :D",
@@ -13,6 +13,41 @@
                     "trigger": "DEVIOUS choice! Mom won't be happy about this >:) She'll know better than to call me down next time!!!!",
                     "shorthand": "t",
                     "link": "toilet"
+                },
+                "Laundry Room": {
+                    "trigger": "Tide pods should be able to wash dishes.... right??? It'll be FINEEEE xD",
+                    "shorthand": "lr",
+                    "link": "laundry room"
+                }
+            }
+        },
+        "kitchen": {
+            "question": "Should I use the dishwasher or wash by hand?",
+            "options": {
+                "Dishwasher": {
+                    "trigger": "The dishwasher is probably the right way to go so I think i'll use that!",
+                    "shorthand": "d",
+                    "link": "dishwasher"
+                },
+                "Sink": {
+                    "trigger": "The dishwasher is probably the right way to go... BUT i'm bored so I might as well ¯\\_(ツ)_/¯",
+                    "shorthand": "s",
+                    "link": "sink"
+                }
+            }
+        },
+        "dishwasher": {
+            "question": "Which cycle should I use?",
+            "options": {
+                "Fast": {
+                    "trigger": "Fast should ge the job done, mom will be pleased when she comes down and sees it all done soon!",
+                    "shorthand": "f",
+                    "link": "END"
+                },
+                "Deep clean": {
+                    "trigger": "The dishes are really dirty, I think a deep clean is worth it this time, mom will be pleased at my good decision making!",
+                    "shorthand": "dc",
+                    "link": "END"
                 }
             }
         },
@@ -20,9 +55,9 @@
             "question": "Do you want to use the toilet bowl or the sink?",
             "options": {
                 "Toilet Bowl": {
-                    "trigger": "This is the easiest path. The swirling water is sure to clean any dishes!",
+                    "trigger": "This is the easiest path. The swirling water is sure to clean any dishes! Mom will find this \"funny\" when she comes and sees these dishes!",
                     "shorthand": "tb",
-                    "link": "kitchen"
+                    "link": "END"
                 },
                 "Sink": {
                     "trigger": "Boringgggg, I should just go to the kitchen since i'm not willing to do anything crazy :(",
@@ -31,53 +66,23 @@
                 }
             }
         },
-        "kitchen": {
-            "question": "Do you want to use the dishwasher or the normal sink?",
+        "laundry room": {
+            "question": "What cycle should I use?? I don't want to break any dishes.... or do I...",
             "options": {
-                "Sink": {
-                    "trigger": "Doing the dishes manually is fun, I just listen to music and jam out while being productive!",
-                    "shorthand": "s",
-                    "link": "pickmusic"
-                },
-                "Dishwasher": {
-                    "trigger": "I'm going to work smarter, not harder! Lets just load everything up and get back to other stuff...",
-                    "shorthand": "d",
+                "Delicate Warm": {
+                    "trigger": "Dishes are delicates. I think. I'll let mom know i'm washing the dishes here and be done for today!",
+                    "shorthand": "dw",
                     "link": "END"
-                }
-            }
-        },
-        "pickmusic": {
-            "question": "Now to play some music... what song should I play?",
-            "options": {
-                "Pompeii by Bastille": {
-                    "trigger": "Classic! This song makes time flyyyyy",
-                    "shorthand": "p",
-                    "link": "picktools"
                 },
-                "Keyboard Milk by Royksopp": {
-                    "trigger": "Reminds me of a man called MARMELIUS THE GREAT!!!! This song is a jam...",
-                    "shorthand": "km",
-                    "link": "picktools"
+                "Cotton Cold": {
+                    "trigger": "I'm too lazy to change the preset, let's just leave it as is :D Mom will figure out where I put the dishes... eventually.",
+                    "shorthand": "cc",
+                    "link": "END"
                 },
-                "High Hopes by Panic! At The Disco": {
-                    "trigger": "A true VIBE! This song really helps me work faster",
-                    "shorthand": "hh",
-                    "link": "picktools"
-                }
-            }
-        },
-        "picktools": {
-            "question": "Now that my mind is in place, it's time to get to work! What should I use to wash the dishes?",
-            "options": {
-                "Water, soap, and a sponge": {
-                    "trigger": "The usual tools always work well! Why would I ever use something else?",
-                    "shorthand": "wss",
-                    "link": ""
-                },
-                "Water and my hands": {
-                    "trigger": "I gotta get going fast, no time for soap or a sponge!\nThat worked well",
-                    "shorthand": "wh",
-                    "link": "picktools"
+                "Color Warm": {
+                    "trigger": "This will be colorful.... on the bright side, mom LOVES colors!!!",
+                    "shorthand": "cw",
+                    "link": "END"
                 }
             }
         }

@@ -1,3 +1,22 @@
+/* AP CSA 1 Chose Your Path Project
+ * - By Brendan Aeria and Reza Bagheri
+ * - 12/21/21
+ * 
+ * Description: Play a dungeons style chose your path game with at least 9 possible paths. You can load up custom games by creating
+ *              "cartridges" which are json files in our format. You can check out "dishes.json" to see an example game.
+ * Preconditions: A valid game exists in the format that is similar to the "dishes.json" example json file. YOU ALSO NEED GSON ON YOUR CLASSPATH, if you don't have that
+ *                download GSON from https://search.maven.org/artifact/com.google.code.gson/gson/2.8.9/jar and drag the Jar to your referenced libraries in VSCode, do that
+ *                by going down expanding "Java Projects -> Choose Your Path" in the bottom left and using the + button next to "Referenced Libraries" to add the GSON Jar.
+ *                I know using Maven, Gradle, or some actually good Java package manager is better than this but this is a lot faster than setting up a whole project.
+ * Postconditions: Your game will be played with you being able to chose your path as you play.
+ * 
+ * NOTICE: All comments that include info on where program requirements have the REQUIREMENT tag (use ctr+f)
+ * NOTICE: There aren't that many "nested if clauses" BUT that's because our program is dynamic. It doesn't have only one story
+ *         so hardcoding nested ifs isn't a good idea, it uses recursion with the askQuery method to do what you wanted nested if
+ *         clauses to do but in a dynamic way that changes based on the game.
+ * REQUIREMENT: Comments throughout
+*/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
@@ -27,12 +46,18 @@ class Main {
          *    and if you follow our format, you can create a new game at any point with a full story line and
          *    as many paths as possible
         */
+        // REQUIREMENT: Loads a game with several choices, the games are loaded in .json files
+        // REQUIREMENT: At least 9 possible paths, each game (.json file w/ a game in it) can have at as many paths as possible,
+        //              the built in example has far more than 9 possible paths
         String game = scn.nextLine();
         File story = new File(game + ".json");
+
+        // REQUIREMENT: At least one compound boolean expression
         if (story.exists() && !game.toLowerCase().equals("random")) {
             // If the game you chose exists, it'll start it
             runner(story);
         } else if (game.toLowerCase().equals("random")) {
+            // REQUIREMENT: At least one else if ^^
             /* If you ask for a random game, it'll chose a random game and let you play it
              *  - This is done by creating an array of files in a directory and filtering them for files
              *    that end with .json
@@ -95,6 +120,7 @@ class Main {
         System.out.println(query.getQuestion());
 
         // Print options
+        // REQUIREMENT: Print statements, current choices, prints out all of the current choices
         for (Entry<String, Option> optionSet : query.getOptions().entrySet()) System.out.println("- " + optionSet.getKey());
 
         // Reads the input of the user and use that to get the option they pick
@@ -106,13 +132,16 @@ class Main {
         else {
             // If they pick a valid option, it first prints a break in order to show where the new question starts and then asks the next question
             System.out.println("------------------------------------------------");
+            // REQUIREMENT: Print statements, previous choices, the trigger is defined in every option and is dependant on what path the user takes
+            System.out.println(optionPicked.getTrigger());
             Query nextQuery = optionPicked.getLink(game);
             if (nextQuery == null) {
                 // End the game by printing the end game message and ending the program
-                System.out.println(optionPicked.getTrigger());
                 scn.close();
                 System.exit(0);
             } else {
+                // REQUIREMENT: At least two nested if clauses, read the notice at the top, we use recursion instead of nested if clauses (although
+                //              there is still one nested if clause to show that we do know how to use them)
                 askQuery(game, nextQuery, true);
             }
         }
